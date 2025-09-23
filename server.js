@@ -76,20 +76,6 @@ app.post("/produtos/cadastro", async (req, res) => {
   }
 });
 
-app.delete("/produtos/:id", async (req, res) => {
-  const { id } = req.params;
-  try {
-    await prisma.produto.delete({
-      where: { id: id },
-    });
-    res.status(204).json({ message: "Produto deletado com sucesso!" });
-  } catch (error) {
-    res
-      .status(500)
-      .json({ message: "Erro ao deletar produto", error: error.message });
-  }
-});
-
 app.put("/produtos/:id", async (req, res) => {
   const { id } = req.params;
   try {
