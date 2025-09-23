@@ -11,10 +11,7 @@ app.use(express.json());
 app.use(cors());
 
 // LOGINS DE ACESSO
-const admLogins = [
-  { email: "lulowcarbedelicias@gmail.com", password: "lulowcarb988" },
-  { email: ".@gmail.com", password: "1234" },
-];
+const admLogins = [{ user: "Luciana", password: "lulowcarb988" }];
 
 // Acordar o servidor
 app.get("/", (req, res) => {
@@ -22,15 +19,15 @@ app.get("/", (req, res) => {
 });
 
 app.post("/login", (req, res) => {
-  const { email, password } = req.body;
+  const { user, password } = req.body;
   const admin = admLogins.find(
-    (adm) => adm.email === email && adm.password === password
+    (adm) => adm.user === user && adm.password === password
   );
 
   if (admin) {
     return res.json({ token: "admloggado.200" });
   } else {
-    return res.status(401).json({ error: "Email ou senha inválidos" });
+    return res.status(401).json({ error: "Usuário ou senha inválidos" });
   }
 });
 
