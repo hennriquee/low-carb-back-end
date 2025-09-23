@@ -968,7 +968,7 @@ export namespace Prisma {
     category: string
     title: string
     text: string
-    price: string
+    price: string | null
     zerolactose: boolean
     zerogluten: boolean
     zerosugar: boolean
@@ -1028,7 +1028,7 @@ export namespace Prisma {
       category: string
       title: string
       text: string
-      price: string
+      price: string | null
       zerolactose: boolean
       zerogluten: boolean
       zerosugar: boolean
@@ -1868,7 +1868,7 @@ export namespace Prisma {
     category?: StringFilter<"Produto"> | string
     title?: StringFilter<"Produto"> | string
     text?: StringFilter<"Produto"> | string
-    price?: StringFilter<"Produto"> | string
+    price?: StringNullableFilter<"Produto"> | string | null
     zerolactose?: BoolFilter<"Produto"> | boolean
     zerogluten?: BoolFilter<"Produto"> | boolean
     zerosugar?: BoolFilter<"Produto"> | boolean
@@ -1895,7 +1895,7 @@ export namespace Prisma {
     category?: StringFilter<"Produto"> | string
     title?: StringFilter<"Produto"> | string
     text?: StringFilter<"Produto"> | string
-    price?: StringFilter<"Produto"> | string
+    price?: StringNullableFilter<"Produto"> | string | null
     zerolactose?: BoolFilter<"Produto"> | boolean
     zerogluten?: BoolFilter<"Produto"> | boolean
     zerosugar?: BoolFilter<"Produto"> | boolean
@@ -1925,7 +1925,7 @@ export namespace Prisma {
     category?: StringWithAggregatesFilter<"Produto"> | string
     title?: StringWithAggregatesFilter<"Produto"> | string
     text?: StringWithAggregatesFilter<"Produto"> | string
-    price?: StringWithAggregatesFilter<"Produto"> | string
+    price?: StringNullableWithAggregatesFilter<"Produto"> | string | null
     zerolactose?: BoolWithAggregatesFilter<"Produto"> | boolean
     zerogluten?: BoolWithAggregatesFilter<"Produto"> | boolean
     zerosugar?: BoolWithAggregatesFilter<"Produto"> | boolean
@@ -1937,7 +1937,7 @@ export namespace Prisma {
     category: string
     title: string
     text: string
-    price: string
+    price?: string | null
     zerolactose?: boolean
     zerogluten?: boolean
     zerosugar?: boolean
@@ -1949,7 +1949,7 @@ export namespace Prisma {
     category: string
     title: string
     text: string
-    price: string
+    price?: string | null
     zerolactose?: boolean
     zerogluten?: boolean
     zerosugar?: boolean
@@ -1960,7 +1960,7 @@ export namespace Prisma {
     category?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     text?: StringFieldUpdateOperationsInput | string
-    price?: StringFieldUpdateOperationsInput | string
+    price?: NullableStringFieldUpdateOperationsInput | string | null
     zerolactose?: BoolFieldUpdateOperationsInput | boolean
     zerogluten?: BoolFieldUpdateOperationsInput | boolean
     zerosugar?: BoolFieldUpdateOperationsInput | boolean
@@ -1971,7 +1971,7 @@ export namespace Prisma {
     category?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     text?: StringFieldUpdateOperationsInput | string
-    price?: StringFieldUpdateOperationsInput | string
+    price?: NullableStringFieldUpdateOperationsInput | string | null
     zerolactose?: BoolFieldUpdateOperationsInput | boolean
     zerogluten?: BoolFieldUpdateOperationsInput | boolean
     zerosugar?: BoolFieldUpdateOperationsInput | boolean
@@ -1983,7 +1983,7 @@ export namespace Prisma {
     category: string
     title: string
     text: string
-    price: string
+    price?: string | null
     zerolactose?: boolean
     zerogluten?: boolean
     zerosugar?: boolean
@@ -1994,7 +1994,7 @@ export namespace Prisma {
     category?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     text?: StringFieldUpdateOperationsInput | string
-    price?: StringFieldUpdateOperationsInput | string
+    price?: NullableStringFieldUpdateOperationsInput | string | null
     zerolactose?: BoolFieldUpdateOperationsInput | boolean
     zerogluten?: BoolFieldUpdateOperationsInput | boolean
     zerosugar?: BoolFieldUpdateOperationsInput | boolean
@@ -2005,7 +2005,7 @@ export namespace Prisma {
     category?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     text?: StringFieldUpdateOperationsInput | string
-    price?: StringFieldUpdateOperationsInput | string
+    price?: NullableStringFieldUpdateOperationsInput | string | null
     zerolactose?: BoolFieldUpdateOperationsInput | boolean
     zerogluten?: BoolFieldUpdateOperationsInput | boolean
     zerosugar?: BoolFieldUpdateOperationsInput | boolean
@@ -2025,6 +2025,22 @@ export namespace Prisma {
     endsWith?: string | StringFieldRefInput<$PrismaModel>
     mode?: QueryMode
     not?: NestedStringFilter<$PrismaModel> | string
+  }
+
+  export type StringNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
+    not?: NestedStringNullableFilter<$PrismaModel> | string | null
+    isSet?: boolean
   }
 
   export type BoolFilter<$PrismaModel = never> = {
@@ -2092,6 +2108,25 @@ export namespace Prisma {
     _max?: NestedStringFilter<$PrismaModel>
   }
 
+  export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
+    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
+    isSet?: boolean
+  }
+
   export type BoolWithAggregatesFilter<$PrismaModel = never> = {
     equals?: boolean | BooleanFieldRefInput<$PrismaModel>
     not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
@@ -2106,6 +2141,11 @@ export namespace Prisma {
 
   export type StringFieldUpdateOperationsInput = {
     set?: string
+  }
+
+  export type NullableStringFieldUpdateOperationsInput = {
+    set?: string | null
+    unset?: boolean
   }
 
   export type BoolFieldUpdateOperationsInput = {
@@ -2129,6 +2169,21 @@ export namespace Prisma {
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
     not?: NestedStringFilter<$PrismaModel> | string
+  }
+
+  export type NestedStringNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableFilter<$PrismaModel> | string | null
+    isSet?: boolean
   }
 
   export type NestedBoolFilter<$PrismaModel = never> = {
@@ -2162,6 +2217,36 @@ export namespace Prisma {
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
     not?: NestedIntFilter<$PrismaModel> | number
+  }
+
+  export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
+    isSet?: boolean
+  }
+
+  export type NestedIntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+    isSet?: boolean
   }
 
   export type NestedBoolWithAggregatesFilter<$PrismaModel = never> = {

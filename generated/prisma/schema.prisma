@@ -19,6 +19,7 @@ model Produto {
   category    String
   title       String
   text        String
+  price       String?
   zerolactose Boolean  @default(false)
   zerogluten  Boolean  @default(false)
   zerosugar   Boolean  @default(false)

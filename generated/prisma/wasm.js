@@ -158,8 +158,8 @@ const config = {
       }
     }
   },
-  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../generated/prisma\"\n}\n\ndatasource db {\n  provider = \"mongodb\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel Produto {\n  id          String   @id @default(auto()) @map(\"_id\") @db.ObjectId\n  category    String\n  title       String\n  text        String\n  price       String\n  zerolactose Boolean  @default(false)\n  zerogluten  Boolean  @default(false)\n  zerosugar   Boolean  @default(false)\n  images      String[]\n}\n",
-  "inlineSchemaHash": "000e5981b5edd5ebfb7861faa9ee1aebdd1c7e4283b2783cf33d5d81c60785a9",
+  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../generated/prisma\"\n}\n\ndatasource db {\n  provider = \"mongodb\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel Produto {\n  id          String   @id @default(auto()) @map(\"_id\") @db.ObjectId\n  category    String\n  title       String\n  text        String\n  price       String?\n  zerolactose Boolean  @default(false)\n  zerogluten  Boolean  @default(false)\n  zerosugar   Boolean  @default(false)\n  images      String[]\n}\n",
+  "inlineSchemaHash": "61304f41261937a162b2ba75c2af8efc7101b533d1f1e2cc28bf6d297920714c",
   "copyEngine": true
 }
 config.dirname = '/'
